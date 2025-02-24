@@ -26,7 +26,8 @@ Requirements:
 3. Provide complete corrected code that fixes all issues
 4. Use proper code formatting in the correctedCode field
 5. Don't escape quotes in the correctedCode unless necessary
-6. Keep the same language as the input code`;
+6. Keep the same language as the input code
+7. Strictly Follow the Requirements`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
@@ -112,7 +113,7 @@ Code to explain:
 ${code}
 \`\`\`
 
-Provide your response in this exact JSON format:
+Provide your response in this exact JSON format With No Markdown:
 {
   "overview": "Brief overview of what the code does",
   "detailedExplanation": "Line-by-line or section-by-section explanation",
@@ -123,7 +124,9 @@ Requirements:
 1. Explain the purpose and functionality
 2. Break down complex logic
 3. Highlight important programming concepts used
-4. Include best practices and potential improvements`;
+4. Include best practices and potential improvements
+5. Return valid JSON only, no markdown
+6. Strictly Follow the Requirements`;
 
     const result = await model.generateContent(prompt);
     const response = result.response;
